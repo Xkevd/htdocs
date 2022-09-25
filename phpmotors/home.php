@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="css/header.css" defer>
+    <link rel="stylesheet" href="css/header-small.css" defer>
     <link rel="stylesheet" href="css/main.css" defer>
     <link rel="stylesheet" href="css/main-small.css" defer>
     <link rel="stylesheet" href="css/footer.css" defer>

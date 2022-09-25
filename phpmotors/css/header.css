@@ -36,21 +36,3 @@ header p{
     background-color: #4c96d7;
     transition: 0.2s background-color;
 }
-/*Small Devices*/
-@media (max-width:600px) {
-    header{
-        border: none;
-        margin: 0;
-        padding: 0;
-    }
-    #logo{
-        width: 50%;
-    }
-    #nav-bar{
-        margin: 0;
-        padding: 0;
-    }
-    #nav-bar ul{
-        width: 100%;
-    }
-}
