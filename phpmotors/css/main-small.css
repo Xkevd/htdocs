@@ -1,0 +1,26 @@
+/*Small*/
+@media (max-width:600px) {
+    body{
+        padding: 0;
+        margin: 0;
+        background-image: none;
+        width: 100%;
+    }
+    main{
+        padding: 0;
+        margin: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+    }
+    #introduction{
+        display: flex;
+        flex-direction: column;
+    }
+    #introduction section{
+        position: relative;
+    }
+    #upgrades{
+
+    }
+}
