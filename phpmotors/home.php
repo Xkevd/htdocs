@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="css/header.css" defer>
-    <link rel="stylesheet" href="css/header-small.css" defer>
-    <link rel="stylesheet" href="css/main.css" defer>
-    <link rel="stylesheet" href="css/main-small.css" defer>
-    <link rel="stylesheet" href="css/footer.css" defer>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/header-small.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main-small.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <header>
@@ -29,22 +29,22 @@
         </div>
         <div id="upgrades">
             <h2>Delorean upgrades</h2>
-            <section>
+            <div>
                 <picture><img src="images/upgrades/flux-cap.png" alt="Flux capacitor"></picture>
                 <a href="">Flux capacitor</a>
-            </section>
-            <section>
+            </div>
+            <div>
                 <picture><img src="images/upgrades/flame.jpg" alt="Flame"></picture>
                 <a href="">Flame Decals</a>
-            </section>
-            <section>
+            </div>
+            <div>
                 <picture><img src="images/upgrades/bumper_sticker.jpg" alt="Stickers"></picture>
                 <a href="">Bumper Stickers</a>
-            </section>
-            <section>
+            </div>
+            <div>
                 <picture><img src="images/upgrades/hub-cap.jpg" alt="Hub cap"></picture>
                 <a href="">Hub Caps</a>
-            </section>
+            </div>
         </div>
         <div id="reviews">
             <h2>DMC Delorean Reviews</h2>
