@@ -11,3 +11,18 @@ WHERE clientFirstname = "Tony" AND clientLastname = "Stark";
 UPDATE inventory
 SET invDescription = replace(invDescription, "small interiors", "spacious interior")
 WHERE invMake = "GM" AND invModel = "Hummer";
+
+--Query 4
+SELECT invId, invModel, classificationName, carclassification.classificationId
+FROM inventory
+INNER JOIN carclassification ON inventory.classificationId = carclassification.classificationId
+WHERE carclassification.classificationId = 1;
+
+--Query 5
+DELETE FROM inventory
+WHERE invMake = "Jeep" AND invModel = "Wrangler";
+
+--Query 6
+UPDATE inventory
+SET invImage=concat("/phpmotors",invImage), invThumbnail=concat("/phpmotors",invThumbnail);
+
