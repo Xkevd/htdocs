@@ -4,7 +4,7 @@ VALUES ("Tony", "Stark", "tony@starkent.com", "Iam1ronM@n", "I am the real Ironm
 
 --Query 2
 UPDATE clients
-SET clientLevel = 3
+SET clientLevel = "3"
 WHERE clientFirstname = "Tony" AND clientLastname = "Stark";
 
 --Query 3
