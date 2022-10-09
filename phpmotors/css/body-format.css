@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
+h1,h2,p,a,li,form{
+    font-family: "IBM Plex Mono", serif;
+}
+body{
+    background-image: url("../images/site/small_check.jpg");
+    background-repeat: repeat;
+    padding: 1rem 2rem;
+}

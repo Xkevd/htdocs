@@ -1,8 +1,3 @@
-body{
-    background-image: url("../images/site/small_check.jpg");
-    background-repeat: repeat;
-    padding: 1rem 2rem;
-}
 main{
     display: grid;
     grid-template-columns: 1fr 1fr;

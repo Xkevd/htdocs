@@ -14,6 +14,9 @@
 <body>
     <header>
         <?php require $_SERVER['DOCUMENT_ROOT'].'/phpmotors/snippets/header.php' ?>
+        <nav id="nav-bar">
+            <?php echo $navList; ?>
+        </nav>
     </header>
     <main>
         <h1>

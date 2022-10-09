@@ -1,0 +1,46 @@
+main{
+    display: grid;
+    background-color: #ffffff;
+    border: 4px #4c96d7 solid;
+    border-top: none;
+    border-bottom: none;
+    margin: 0;
+    padding-left: 1rem;
+}
+main form{
+    display: flex;
+    flex-direction: column;
+}
+main form label, #submitLogin{
+    margin-top: 1rem;
+}
+main form{
+    min-width: 10rem;
+    width: 25vw;
+}
+#submitLogin{
+    min-width: fit-content;
+    width: 7vw;
+    font-size: 1.2rem;
+    border-radius: 0;
+    height: fit-content;
+}
+main form input{
+    border-radius: 0;
+    height: 1.2rem;
+}
+@media (max-width:800px) {
+    #signInTitle{
+        font-size: 1.2rem;
+        padding-left: 1rem;
+    }
+    #loginPage{
+        padding: 0;
+    }
+    #loginPage form{
+        margin: auto;
+    }
+    #goToRegister{
+        text-align: center;
+    }
+}
