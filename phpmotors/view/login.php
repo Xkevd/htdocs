@@ -22,7 +22,12 @@
         <h1 id="signInTitle">
             Sign in
         </h1>
-        <form action="#">
+        <?php
+            if (isset($message)) {
+                echo $message;
+            }
+        ?>
+        <form action="/phpmotors/accounts/index.php" method="post">
             <label for="userEmail">Email</label>
             <input name="userEmail" id="userEmail" type="email">
             <label for="userPassword">Password</label>

@@ -73,3 +73,44 @@ main{
     margin: 1rem 0;
 }
 
+/*Vehicle Management*/
+#vehicle-management{
+    display: flex;
+    flex-direction: column;
+}
+#vehicle-management h1{
+    margin-left: 1rem;
+}
+/*Add Classification*/
+#add-classification-page{
+    display: flex;
+    flex-direction: column;
+}
+#add-classification-page h1{
+    margin-left: 1rem;
+}
+#add-classification-page form{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    min-width: fit-content;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+#send-classification{
+    width: 15vw;
+    margin-top: 1rem;
+}
+/*Add Vehicle*/
+#add-car-form{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    min-width: fit-content;
+}
+#add-car-form label{
+    margin-top: 1rem;
+    font-weight: bold;
+}

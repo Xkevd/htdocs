@@ -23,7 +23,12 @@
         <h1>
             Register
         </h1>
-        <form action="#">
+        <?php
+            if (isset($message)) {
+                echo $message;
+            }
+        ?>
+        <form action="/phpmotors/accounts/index.php" method="post">
             <label for="userName">Name</label>
             <input name="userName" id="userName" type="text">
             <label for="userLastName">Last Name</label>
@@ -33,7 +38,9 @@
             <label for="userPassword">Password</label>
             <input name="userPassword" id="userPassword" type="password">
             <button id="showPassword">Show password</button>
-            <input id="registerButton" type="submit" value="Register">
+            <input name="submit" id="registerButton" type="submit" value="register">
+            <!-- Add the action name - value pair -->
+            <input type="hidden" name="action" value="register">
         </form>
     </main>
     <footer>
