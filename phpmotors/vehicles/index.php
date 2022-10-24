@@ -21,11 +21,11 @@ foreach ($classifications as $classification) {
 }
 $navList .= '</ul>';
 
-
+$classificationsAndIds = getIdAndClassification();
 //Create the clasifications list
-$classificationList = '<select >';
-foreach ($classifications as $car){
-    $classificationList .= "<option value='$car[classificationName]'>$car[classificationName]</option>";
+$classificationList = '<select name="optionsList" form="add-car-form">';
+foreach ($classificationsAndIds as $car){
+    $classificationList .= "<option id='$car[classificationName]Option' name='$car[classificationName]Option' value='$car[classificationId]'>$car[classificationName]</option>";
 }
 $classificationList .= '</select>';
 
@@ -55,6 +55,28 @@ switch ($action){
         //Check the result
         if($classOutCome===1){
             header('Location: ../vehicles/index.php');
+            exit;
+        } else{
+            $message = '<p>Sorry, something went wrong. Try again.</p>';
+            exit;
+        }
+        break;
+    case 'vehicle-added':
+        $invMake = filter_input(INPUT_POST, 'invMake');
+        $invModel = filter_input(INPUT_POST, 'invModel');
+        $invDescription = filter_input(INPUT_POST, 'invDescription');
+        $invImage = "phpmotors/images/no-image.png";
+        $invThumbnail = "phpmotors/images/no-image.png";
+        $invPrice = filter_input(INPUT_POST, 'invPrice');
+        $invStock = filter_input(INPUT_POST, 'invStock');
+        $invColor = filter_input(INPUT_POST, 'invColor');
+        $classificationId = filter_input(INPUT_POST, 'optionsList');
+        //Check Results
+        $addVehicleOutCome = newVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId);
+        if($addVehicleOutCome===1){
+            $message = '<p>New car added!</p>';
+            include '../view/add-vehicle.php';
+            
             exit;
         } else{
             $message = '<p>Sorry, something went wrong. Try again.</p>';

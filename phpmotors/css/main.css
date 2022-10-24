@@ -114,3 +114,13 @@ main{
     margin-top: 1rem;
     font-weight: bold;
 }
+#send-vehicle{
+    margin-top: 1rem;
+    width: fit-content;
+    margin-right: 0;
+    margin-left: auto;
+}
+#add-vehicle{
+    display: flex;
+    flex-direction: column;
+}
