@@ -29,14 +29,14 @@
         ?>
         <p>*Note all fields are required</p>
         <form action="/phpmotors/vehicles/index.php" method="post" id="add-car-form">
-            <label for="invClassification">Choose car classification</label>
+            <label for="optionsList">Choose car classification</label>
             <?php echo($classificationList) ?>
             <label for="invMake">Make</label>
             <input type="text" id="invMake" name="invMake" required>
             <label for="invModel">Model</label>
             <input type="text" id="invModel" name="invModel" required>
             <label for="invDescription">Description</label>
-            <input type="textarea" id="invDescription" name="invDescription" required>
+            <input type="text" id="invDescription" name="invDescription" required>
             <label for="invImage">Image Path</label>
             <input type="text" id="invImage" name="invImage" required>
             <label for="invThumbnail">Thumbnail Path</label>

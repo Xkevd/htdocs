@@ -23,9 +23,9 @@ $navList .= '</ul>';
 
 $classificationsAndIds = getIdAndClassification();
 //Create the clasifications list
-$classificationList = '<select name="optionsList" form="add-car-form">';
+$classificationList = '<select id="optionsList" name="optionsList" form="add-car-form">';
 foreach ($classificationsAndIds as $car){
-    $classificationList .= "<option id='$car[classificationName]Option' name='$car[classificationName]Option' value='$car[classificationId]'>$car[classificationName]</option>";
+    $classificationList .= "<option id='$car[classificationName]Option' value='$car[classificationId]'>$car[classificationName]</option>";
 }
 $classificationList .= '</select>';
 
