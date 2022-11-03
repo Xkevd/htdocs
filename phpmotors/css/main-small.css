@@ -46,4 +46,14 @@
     #upgrades{
         grid-row: 3/4;
     }
+
+/*Add Vehicle*/
+#add-vehicle, #add-classification-page{
+    display: flex;
+    align-items: center;
+}
+/*Add Classification*/
+#send-vehicle, #send-classification{
+    width: fit-content;
+}
 }

@@ -124,3 +124,9 @@ main{
     display: flex;
     flex-direction: column;
 }
+/*Admin Client*/
+#admin-client{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}

@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+<?php
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Managment</title>
+    <title>Client Admin</title>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/header-small.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/main-small.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/body-format.css" >
 </head>
 <body>
     <header>
@@ -18,21 +21,27 @@
             <?php echo $navList; ?>
         </nav>
     </header>
-    <main id="add-classification-page">
+    <main id="admin-client">
         <h1>
-            Add Car Classification
+            <span>User Name</span>
         </h1>
-        <?php
-            if (isset($message)) {
-                echo $message;
-            }
-        ?>
-        <form action="/phpmotors/vehicles/index.php" method="post">
-            <label for="new-classification">Classification Name</label>
-            <input type="text" name="new-classification" id="new-classification" required maxlength="30">
-            <input type="submit" id="send-classification" value="Add Classification">
-            <input type="hidden" name="action" value="classification-added">
-        </form>
+        <div id="login-info">
+            <h2>
+                You are logged in.
+            </h2>
+            <ul>
+                <li>First Name: <span></span></li>
+                <li>Last Name: <span></span></li>
+                <li>Email: <span></span></li>
+            </ul>
+        </div>
+        <div id="login-vehicle">
+            <h2>
+                Inventory Management
+            </h2>
+            <p>Use this link to manage the inventory.</p>
+            <a href="#">Vehicle Management</a>
+        </div>
     </main>
     <footer>
     <?php require $_SERVER['DOCUMENT_ROOT'].'/phpmotors/snippets/footer.php' ?>

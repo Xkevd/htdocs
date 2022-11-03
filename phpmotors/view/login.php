@@ -23,16 +23,18 @@
             Sign in
         </h1>
         <?php
-            if (isset($message)) {
-                echo $message;
-            }
+            if (isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
+               }
         ?>
         <form action="/phpmotors/accounts/index.php" method="post">
             <label for="userEmail">Email</label>
-            <input name="userEmail" id="userEmail" type="email">
+            <input name="userEmail" id="userEmail" type="email" required <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?>>
             <label for="userPassword">Password</label>
-            <input name="userPassword" id="userPassword" type="password">
+            <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
+            <input name="userPassword" id="userPassword" type="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
             <input id="submitLogin" type="submit" value="Sign-in">
+            <input type="hidden" name="action" value="Login">
         </form>
         <a id="goToRegister" href="/phpmotors/accounts/index.php?action=registration">Not a member yet?</a>
     </main>

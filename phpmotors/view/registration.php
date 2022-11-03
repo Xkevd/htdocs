@@ -30,13 +30,14 @@
         ?>
         <form action="/phpmotors/accounts/index.php" method="post">
             <label for="userName">Name</label>
-            <input name="userName" id="userName" type="text">
+            <input name="userName" id="userName" type="text" required <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?>>
             <label for="userLastName">Last Name</label>
-            <input name="userLastName" id="userLastName" type="text">
+            <input name="userLastName" id="userLastName" type="text" required <?php if(isset($clientLastname)){echo "value='$clientLastname'";}  ?>>
             <label for="userEmail">Email</label>
-            <input name="userEmail" id="userEmail" type="email">
+            <input name="userEmail" id="userEmail" type="email" required <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?>>
             <label for="userPassword">Password</label>
-            <input name="userPassword" id="userPassword" type="password">
+            <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
+            <input name="userPassword" id="userPassword" type="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
             <button id="showPassword">Show password</button>
             <input name="submit" id="registerButton" type="submit" value="register">
             <!-- Add the action name - value pair -->
