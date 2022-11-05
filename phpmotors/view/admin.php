@@ -1,5 +1,10 @@
 <?php
-
+if(!$_SESSION['loggedin']){
+    header('Location: /phpmotors/');
+}
+$_SESSION['clientFullName'] = $_SESSION['clientData']['clientFirstname'];
+$_SESSION['clientFullName'] .= " ";
+$_SESSION['clientFullName'] .= $_SESSION['clientData']['clientLastname'];
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,25 +28,29 @@
     </header>
     <main id="admin-client">
         <h1>
-            <span>User Name</span>
+            <?php echo $_SESSION['clientData']['clientFirstname'];?>
         </h1>
         <div id="login-info">
             <h2>
                 You are logged in.
             </h2>
             <ul>
-                <li>First Name: <span></span></li>
-                <li>Last Name: <span></span></li>
-                <li>Email: <span></span></li>
+                <li>First Name: <?php echo $_SESSION['clientData']['clientFirstname'];?></li>
+                <li>Last Name: <?php echo $_SESSION['clientData']['clientLastname'];?></li>
+                <li>Email: <?php echo $_SESSION['clientData']['clientEmail'];?></li>
             </ul>
         </div>
-        <div id="login-vehicle">
+        <?php
+        if($_SESSION['clientData']['clientLevel']==3){
+            echo '<div id="login-vehicle">
             <h2>
                 Inventory Management
             </h2>
             <p>Use this link to manage the inventory.</p>
-            <a href="#">Vehicle Management</a>
-        </div>
+            <a href="/phpmotors/vehicles/">Vehicle Management</a>
+        </div>';
+        }
+        ?>
     </main>
     <footer>
     <?php require $_SERVER['DOCUMENT_ROOT'].'/phpmotors/snippets/footer.php' ?>

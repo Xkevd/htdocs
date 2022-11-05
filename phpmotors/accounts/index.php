@@ -30,6 +30,11 @@ $action = filter_input(INPUT_POST, 'action');
   $action = filter_input(INPUT_GET, 'action');
  }
 
+// Check if the firstname cookie exists, get its value
+if(isset($_COOKIE['firstname'])){
+  $cookieFirstname = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+ }
+
 switch ($action){
   case 'registration':
     include '../view/registration.php';
@@ -109,10 +114,21 @@ switch ($action){
     array_pop($clientData);
     // Store the array into the session
     $_SESSION['clientData'] = $clientData;
+    $clientFirstname = $_SESSION['clientData']['clientFirstname'];
+    setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');      
     // Send them to the admin view
-    include '../view/admin.php';
+    header('Location: /phpmotors/accounts/?action=admin');
     exit;
-
+    break;
+  case 'admin':
+    include '../view/admin.php';
+    break;
+  case 'Logout':
+    setcookie("firstname", "", time()-3600, '/');
+    unset($_COOKIE['firstname']);
+    session_unset();
+    session_destroy();
+    header('Location: /phpmotors/accounts/?action=login');
     break;
   default:
     include '../view/home.php';

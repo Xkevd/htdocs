@@ -1,12 +1,18 @@
 header{
     display: grid;
-    grid-template-columns: 1fr 1fr min-content;
+    grid-template-columns: 1fr 1fr auto;
     background-color: #ffffff;
     border: 4px #4c96d7 solid;
     border-bottom: none;
     border-radius: 10px 10px 0 0;
 }
+#myAccountDiv{
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+}
 #myAccount{
+    align-self:center;
     justify-self: end;
     padding-right: 3rem;
     cursor: pointer;

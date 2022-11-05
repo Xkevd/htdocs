@@ -1,4 +1,9 @@
 <?php
+//Check if user is Level 3
+if($_SESSION['clientData']['clientLevel']!=3 and $_SESSION['loggedin']){
+    header('Location: /phpmotors/');
+}
+
 $classificationsAndIds = getIdAndClassification();
 //Create the clasifications list
 $classificationList = '<select id="optionsList" name="optionsList" form="add-car-form" required>';
@@ -20,6 +25,7 @@ $classificationList .= '</select>';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Managment</title>
+    <link rel="stylesheet" href="../css/body-format.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/header-small.css">
     <link rel="stylesheet" href="../css/main.css">
