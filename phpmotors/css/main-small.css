@@ -48,12 +48,20 @@
     }
 
 /*Add Vehicle*/
-#add-vehicle, #add-classification-page{
+#add-vehicle, #add-classification-page, #mod-vehicle{
     display: flex;
     align-items: center;
 }
 /*Add Classification*/
 #send-vehicle, #send-classification{
     width: fit-content;
+    
+}
+/*ADMIN*/
+#admin-client h1, #admin-client h2{
+    text-align: center;
+}
+#client-update h1, #client-update h2{
+    text-align: center;
 }
 }

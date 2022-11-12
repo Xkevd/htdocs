@@ -81,6 +81,14 @@ main{
 #vehicle-management h1{
     margin-left: 1rem;
 }
+#classificationList{
+    width: 25vw;
+    min-width: 5rem;
+}
+#inventoryDisplay{
+    width: 50vw;
+    min-width: fit-content;
+}
 /*Add Classification*/
 #add-classification-page{
     display: flex;
@@ -102,7 +110,7 @@ main{
     margin-top: 1rem;
 }
 /*Add Vehicle*/
-#add-car-form{
+#add-car-form, #mod-car-form{
     margin-left: 1rem;
     margin-bottom: 1rem;
     display: flex;
@@ -110,7 +118,7 @@ main{
     width: 25vw;
     min-width: fit-content;
 }
-#add-car-form label{
+#mod-car-form label{
     margin-top: 1rem;
     font-weight: bold;
 }
@@ -120,7 +128,7 @@ main{
     margin-right: 0;
     margin-left: auto;
 }
-#add-vehicle{
+#add-vehicle, #mod-vehicle{
     display: flex;
     flex-direction: column;
 }
@@ -129,4 +137,19 @@ main{
     display: flex;
     flex-direction: column;
     padding-left: 1rem;
+}
+/*Client Update*/
+#client-update{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+#client-update form{
+    display: flex;
+    flex-direction: column;
+    
+}
+#client-update form input{
+    min-width: fit-content;
+    width: 15rem;
 }

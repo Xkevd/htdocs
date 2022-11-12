@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
-h1,h2,p,a,li,form, span{
+h1,h2,p,a,li,form,span{
     font-family: "IBM Plex Mono", serif;
 }
 body{

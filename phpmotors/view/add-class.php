@@ -1,8 +1,10 @@
 <?php
 //Check if user is Level 3
-if($_SESSION['clientData']['clientLevel']!=3 and $_SESSION['loggedin']){
+if(($_SESSION['clientData']['clientLevel']!=3) || $_SESSION['loggedin']==false){
     header('Location: /phpmotors/');
+    exit;
 }
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

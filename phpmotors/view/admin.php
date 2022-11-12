@@ -40,6 +40,10 @@ $_SESSION['clientFullName'] .= $_SESSION['clientData']['clientLastname'];
                 <li>Email: <?php echo $_SESSION['clientData']['clientEmail'];?></li>
             </ul>
         </div>
+        <div id="user-admin">
+            <h2>Account management</h2>
+            <a href="/phpmotors/accounts/?action=upd">Update account information</a>
+        </div>
         <?php
         if($_SESSION['clientData']['clientLevel']==3){
             echo '<div id="login-vehicle">
