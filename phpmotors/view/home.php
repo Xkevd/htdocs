@@ -30,7 +30,7 @@
                     Fuzzy dice!</p>
                 <button><img src="images/site/own_today.png" alt="Button own today"></button>
             </section>
-            <img id="delorean-img" src="images/delorean.jpg" alt="Delorean car picture">
+            <img id="delorean-img" src="images/vehicles/delorean.jpg" alt="Delorean car picture">
         </div>
         <div id="upgrades">
             <h2>Delorean upgrades</h2>
