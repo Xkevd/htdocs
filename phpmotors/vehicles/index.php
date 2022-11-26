@@ -16,6 +16,8 @@ require_once '../model/vehicles-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 
+require_once '../model/uploads-model.php';
+
 $classifications = getClassifications();
 $classificationsAndIds = getIdAndClassification();
 
@@ -178,6 +180,9 @@ switch ($action){
         $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
         $vehicleInfo = getInvItemInfo($invId);
         $vehicleView = buildVehicleView($vehicleInfo);
+        
+        $thumbnails = getThumbnails($invId);
+        $thumbnailsList = dispThumbnails($thumbnails);
         include '../view/vehicle-view.php';
         break;
     default:

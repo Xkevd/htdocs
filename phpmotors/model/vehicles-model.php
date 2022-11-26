@@ -60,7 +60,10 @@ function getInventoryByClassification($classificationId){
 // Get vehicle information by invId
 function getInvItemInfo($invId){
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM inventory WHERE invId = :invId';
+    $sql = 'SELECT inventory.*, images.imgPath
+    FROM inventory 
+    INNER JOIN images ON (inventory.invId = images.invId AND images.imgPrimary = 1)
+    WHERE imgPath NOT LIKE "%-tn%" AND inventory.invId = :invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
     $stmt->execute();
@@ -82,7 +85,11 @@ function deleteVehicle($invId) {
 //Get Vehicles By Classification
 function getVehiclesByClassification($classificationName){
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM inventory WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
+    $sql = 'SELECT inventory.*, images.imgPath
+    FROM inventory 
+    INNER JOIN images ON (inventory.invId = images.invId AND images.imgPrimary = 1)
+    WHERE imgPath LIKE "%-tn%" AND classificationId IN
+    (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
     $stmt->execute();
@@ -95,7 +102,7 @@ function buildVehiclesDisplay($vehicles){
     $dv = '<ul id="inv-display">';
     foreach ($vehicles as $vehicle) {
      $dv .= "<li><a href='/phpmotors/vehicles/?action=open-vehicle&invId=$vehicle[invId]'>";
-     $dv .= "<img class='vehicle-image' src='$vehicle[invThumbnail]' alt='$vehicle[invMake] $vehicle[invModel] image on phpmotors.com'>";
+     $dv .= "<img class='vehicle-image' src='$vehicle[imgPath]' alt='$vehicle[invMake] $vehicle[invModel] image on phpmotors.com'>";
      $dv .= '<hr>';
      $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
      $dv .= "<span>$vehicle[invPrice]</span>";

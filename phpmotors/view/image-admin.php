@@ -9,6 +9,7 @@ if (isset($_SESSION['message'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Management</title>
+    <link rel="stylesheet" href="../css/body-format.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/header-small.css">
     <link rel="stylesheet" href="../css/main.css">
@@ -22,7 +23,7 @@ if (isset($_SESSION['message'])) {
             <?php echo $navList; ?>
         </nav>
     </header>
-    <main>
+    <main id="images-admin">
         <h1>
         Image Management
         </h1>

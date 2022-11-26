@@ -58,3 +58,23 @@ function checkExistingImage($imgName){
     $stmt->closeCursor();
     return $imageMatch;
    }
+function getThumbnails($invId){
+    $db = phpmotorsConnect();
+    $sql = "SELECT invId, imgName, imgPath FROM images WHERE invId = :invId AND imgPath LIKE '%-tn%'";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':invId', $invId, PDO::PARAM_STR);
+    $stmt->execute();
+    $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $images;
+}
+function dispThumbnails($images){
+    $dv = "<ul id='thumbnails-list'>";
+    foreach ($images as $image) {
+        $dv .= "<li class='thumbnails-left'>";
+        $dv .= "<img class='vehicle-tb' src='$image[imgPath]' alt='$image[imgName] image on phpmotors.com'>";
+        $dv .= "</li>";        
+    }
+    $dv .= "</ul>";
+    return $dv;
+}

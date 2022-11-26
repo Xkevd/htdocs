@@ -58,7 +58,7 @@ function updateVehicle($invMake, $invModel, $invDescription, $invImage, $invThum
 function buildVehicleView($vehicleInfo){
     $vehicleView = "<h1>$vehicleInfo[invMake] $vehicleInfo[invModel]</h1>";
     $vehicleView .= "<div id='vehicle-img'>";
-    $vehicleView .= "<img src='$vehicleInfo[invImage]' alt='Vehicle: $vehicleInfo[invMake]'>";
+    $vehicleView .= "<img id='inv-vehicle' src='$vehicleInfo[imgPath]' alt='Vehicle: $vehicleInfo[invMake]'>";
     $vehicleView .= "<p>Price: <span id='vehicle-price'>$vehicleInfo[invPrice]</span></p>";
     $vehicleView .= "</div>";
     $vehicleView .= "<div id='vehicle-info'>";

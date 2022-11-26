@@ -28,6 +28,9 @@
         <?php if(isset($vehicleView)){
         echo $vehicleView;
         } ?>
+                <?php if(isset($thumbnailsList)){
+        echo $thumbnailsList;
+        } ?>
     </main>
     <footer>
     <?php require $_SERVER['DOCUMENT_ROOT'].'/phpmotors/snippets/footer.php' ?>
