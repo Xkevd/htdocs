@@ -264,3 +264,34 @@ main{
     transition: transform .1s;
 }
 }
+#search-page{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+#search-page form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+#search-page form input{
+    font-size: 1.5rem;
+}
+#search-form-title{
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+#number-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#number-of-pages-section{
+    display: flex;
+}
+#number-of-pages-section p{
+    margin: 0 0.5rem;
+}
+#number-of-pages-section a{
+    margin: 0 0.5rem;
+}

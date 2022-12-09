@@ -6,12 +6,17 @@
 }
 $_SESSION['clientFirstName'] = $_SESSION['clientData']['clientFirstname'];
 if(!$_SESSION['loggedin']){
-    echo "<a href='/phpmotors/accounts/index.php?action=login' id='myAccount'>My account</a>";
+    $myAccount = "<div id='myAccountDiv'>";
+    $myAccount .= "<a href='/phpmotors/accounts/index.php?action=login' id='myAccount'>My account</a>";
+    $myAccount .= "<a href='/phpmotors/search/index.php?action=open-search' id='search'>&#128269;</a>";
+    $myAccount .= "</div>";
+    echo $myAccount;
 }else{
     $myAccount = "<div id='myAccountDiv'>";
     $myAccount .= "<a href='/phpmotors/accounts/index.php?action=admin' id='myAccountName'>$_SESSION[clientFirstName]</a>";
     $myAccount .= "<p>|</p>";
     $myAccount .= "<a href='/phpmotors/accounts/index.php?action=Logout' id='logout'>Logout</a>";
+    $myAccount .= "<a href='/phpmotors/search/index.php?action=open-search' id='search'>&#128269;</a>";
     $myAccount .= "</div>";
     echo $myAccount;
 }
